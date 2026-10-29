@@ -1,0 +1,25 @@
+
+def check_even_odd(number):
+    if number % 2 == 0:
+        print(number, "is Even")
+    else:
+        print(number, "is Odd")
+
+def check_prime(number):
+    if number < 2:
+        return False
+
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+
+    return True
+
+num = int(input("Enter a number: "))
+
+check_even_odd(num)
+
+if check_prime(num):
+    print(num, "is a Prime Number")
+else:
+    print(num, "is not a Prime Number")
