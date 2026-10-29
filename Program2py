@@ -1,0 +1,38 @@
+
+def calculate_average(marks):
+    return sum(marks) / len(marks)
+
+def assign_grade(average):
+    if average >= 90:
+        return "A"
+    elif average >= 80:
+        return "B"
+    elif average >= 70:
+        return "C"
+    elif average >= 60:
+        return "D"
+    elif average >= 40:
+        return "E"
+    else:
+        return "F"
+
+n = int(input("Enter number of subjects: "))
+
+marks = []
+
+for i in range(n):
+    mark = float(input("Enter marks: "))
+    if mark < 0 or mark > 100:
+        print("Invalid marks. Enter marks between 0 and 100.")
+        break
+    marks.append(mark)
+
+if len(marks) == n and n > 0:
+    average = calculate_average(marks)
+    grade = assign_grade(average)
+
+    print("Total Marks:", sum(marks))
+    print("Average Marks:", round(average, 2))
+    print("Grade:", grade)
+elif n <= 0:
+    print("Number of subjects must be positive.")
